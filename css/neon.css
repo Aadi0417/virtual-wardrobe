@@ -1,0 +1,50 @@
+/* ============================================================
+   NEON EFFECT UTILITIES
+   ============================================================ */
+
+/* Basic neon glow */
+.neon {
+    text-shadow: 0 0 10px var(--neon-blue),
+                 0 0 20px var(--neon-cyan),
+                 0 0 40px var(--neon-blue);
+    color: var(--neon-cyan);
+}
+
+/* Pink neon variant */
+.neon-pink {
+    text-shadow: 0 0 12px var(--neon-pink),
+                 0 0 22px var(--neon-pink),
+                 0 0 32px var(--neon-pink);
+    color: var(--neon-pink);
+}
+
+/* Purple neon */
+.neon-purple {
+    text-shadow: 0 0 12px var(--neon-purple),
+                 0 0 24px var(--neon-purple),
+                 0 0 40px var(--neon-purple);
+    color: var(--neon-purple);
+}
+
+/* Cyan border glow */
+.glow-border {
+    border-color: var(--neon-cyan) !important;
+    box-shadow: 0 0 14px rgba(0, 234, 255, 0.5) !important;
+}
+
+/* Hover glow card */
+.glow-hover:hover {
+    box-shadow: 0 0 26px rgba(0, 234, 255, 0.4),
+                0 0 40px rgba(0, 234, 255, 0.2);
+}
+
+/* Neon pulse animation */
+@keyframes neonPulse {
+    0% { box-shadow: 0 0 6px var(--neon-cyan); }
+    50% { box-shadow: 0 0 24px var(--neon-blue); }
+    100% { box-shadow: 0 0 6px var(--neon-cyan); }
+}
+
+.neon-pulse {
+    animation: neonPulse 2s infinite alternate;
+}

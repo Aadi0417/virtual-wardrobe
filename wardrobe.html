@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wardrobe | Virtual Wardrobe</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/neon.css">
+    <link rel="stylesheet" href="css/pages/wardrobe.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo neon">StyleMate</div>
+
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div><div></div><div></div>
+            </div>
+
+            <div class="nav-links" id="navMenu">
+                <a href="index.html">Home</a>
+                <a href="add.html">Add Clothes</a>
+                <a href="wardrobe.html" class="active">Wardrobe</a>
+                <a href="planner.html">Outfit Planner</a>
+                <a href="saved.html">Saved Outfits</a>
+            </div>
+        </div>
+    </nav>
+
+    <h1 class="page-title">My Wardrobe</h1>
+
+    <div class="container">
+
+        <!-- ================= FILTERS ================= -->
+        <div class="glass filters">
+
+            <div class="grid-4">
+                <select id="filterCategory" onchange="renderClothes()">
+                    <option value="">Category</option>
+                    <option>Top</option>
+                    <option>Bottom</option>
+                    <option>Shoes</option>
+                    <option>Accessory</option>
+                    <option>Outerwear</option>
+                </select>
+
+                <select id="filterColor" onchange="renderClothes()">
+                    <option value="">Color</option>
+                </select>
+
+                <select id="filterSeason" onchange="renderClothes()">
+                    <option value="">Season</option>
+                    <option>Summer</option>
+                    <option>Winter</option>
+                    <option>Spring</option>
+                    <option>Autumn</option>
+                </select>
+
+                <select id="filterOccasion" onchange="renderClothes()">
+                    <option value="">Occasion</option>
+                    <option>Casual</option>
+                    <option>Formal</option>
+                    <option>Party</option>
+                    <option>Sports</option>
+                    <option>Work</option>
+                </select>
+            </div>
+
+            <input id="searchInput" class="mt-2" placeholder="Search by tags or color..." oninput="renderClothes()">
+
+        </div>
+
+        <!-- ================= WARDROBE GRID ================= -->
+        <div id="wardrobeGrid" class="grid-3 mt-3"></div>
+
+    </div>
+
+    <!-- ================= TOAST ================= -->
+    <div id="toast" class="toast">Removed</div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        StyleMate © 2025
+    </footer>
+
+    <!-- ================= JS ================= -->
+    <script src="js/storage.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/wardrobe.js"></script>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("navMenu").classList.toggle("active");
+        }
+    </script>
+
+</body>
+</html>

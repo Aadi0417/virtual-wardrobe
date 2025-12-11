@@ -1,0 +1,168 @@
+/* ============================================================
+   LAYOUT: NAVBAR, FOOTER, PAGE STRUCTURE
+   ============================================================ */
+
+/* -------------------
+   NAVBAR
+   ------------------- */
+
+nav {
+    width: 100%;
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(12px);
+    background: rgba(10, 15, 31, 0.7);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-container {
+    width: min(90%, var(--max-width));
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.nav-logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--neon-cyan);
+    text-shadow: 0 0 12px var(--neon-cyan);
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+/* Navigation links */
+
+.nav-links {
+    display: flex;
+    gap: 26px;
+}
+
+.nav-links a {
+    font-size: 1rem;
+    color: var(--text-light);
+    transition: 0.25s;
+}
+
+.nav-links a:hover {
+    color: var(--neon-pink);
+    text-shadow: 0 0 10px var(--neon-pink);
+}
+
+/* Mobile hamburger */
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger div {
+    width: 26px;
+    height: 3px;
+    background: var(--text-light);
+    border-radius: 5px;
+}
+
+/* Mobile menu */
+
+@media(max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+
+        flex-direction: column;
+        gap: 18px;
+
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(12px);
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* -------------------
+   FOOTER
+   ------------------- */
+
+footer {
+    margin-top: 80px;
+    padding: 30px 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    backdrop-filter: blur(12px);
+}
+
+/* -------------------
+   PAGE TITLES
+   ------------------- */
+
+.page-title {
+    font-size: 2.6rem;
+    text-align: center;
+    margin: 30px 0;
+    color: var(--neon-blue);
+    text-shadow: 0 0 20px var(--neon-blue);
+}
+
+/* -------------------
+   SECTIONS
+   ------------------- */
+
+.section {
+    margin: 40px 0;
+}
+
+/* -------------------
+   GRIDS
+   ------------------- */
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 26px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 26px;
+}
+
+/* -------------------
+   HERO SECTION
+   ------------------- */
+
+.hero {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    color: var(--text-light);
+    text-shadow: 0 0 14px var(--neon-purple);
+}
+
+.hero p {
+    margin-top: 12px;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}

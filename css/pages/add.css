@@ -1,0 +1,47 @@
+/* ============================================================
+   ADD CLOTHES PAGE
+   ============================================================ */
+
+.upload-area {
+    text-align: center;
+    padding: 40px;
+    border: 2px dashed rgba(255,255,255,0.2);
+    border-radius: var(--radius-lg);
+    transition: 0.3s;
+}
+
+.upload-area:hover {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 20px rgba(0,234,255,0.3);
+}
+
+#fileInput {
+    display: none;
+}
+
+.preview img {
+    width: 100%;
+    border-radius: var(--radius);
+    margin-top: 10px;
+    box-shadow: 0 0 16px rgba(0,234,255,0.4);
+}
+
+/* Form */
+.form-area label {
+    display: block;
+    margin-top: 12px;
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+.form-area button {
+    width: 100%;
+    padding: 14px;
+}
+
+/* Responsive */
+@media(max-width: 900px) {
+    .upload-area, .form-area {
+        padding: 20px;
+    }
+}

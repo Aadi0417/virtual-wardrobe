@@ -1,0 +1,54 @@
+/* ============================================================
+   SAVED PAGE STYLES
+   ============================================================ */
+
+#savedGrid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.saved-card {
+  padding: 12px;
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  display:flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.saved-thumb {
+  width: 86px;
+  height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.saved-meta {
+  flex: 1;
+}
+
+.saved-actions {
+  display:flex;
+  flex-direction:column;
+  gap: 8px;
+}
+
+/* small buttons inside card */
+.saved-actions .btn {
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  width: 96px;
+}
+
+/* responsive */
+@media(max-width: 680px) {
+  .saved-card { flex-direction: column; align-items:flex-start; }
+  .saved-actions { flex-direction:row; }
+  .saved-actions .btn { width: auto; padding: 8px 12px; }
+}

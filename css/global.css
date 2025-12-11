@@ -1,0 +1,227 @@
+/* ============================================================
+   GLOBAL CSS — THEME, RESET, VARIABLES
+   Neon + Glassmorphism System
+   ============================================================ */
+
+/* -------------------------
+   CSS RESET
+   ------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0a0f1f; /* deep dark blue */
+    color: #e6e6e6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Remove ugly default focus outlines */
+*:focus {
+    outline: none;
+}
+
+/* --------------------------------------------
+   THEME VARIABLES — COLORS + GLOW
+   -------------------------------------------- */
+
+:root {
+    /* Neon colors */
+    --neon-pink: #ff2bd8;
+    --neon-blue: #3a86ff;
+    --neon-cyan: #00eaff;
+    --neon-purple: #7b2ff7;
+
+    /* Glowing shadows */
+    --glow-medium: 0 0 12px rgba(0, 234, 255, 0.6);
+    --glow-strong: 0 0 35px rgba(123, 47, 247, 0.9);
+
+    /* Glass background */
+    --glass-bg: rgba(255, 255, 255, 0.07);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-blur: blur(14px);
+
+    /* Text colors */
+    --text-light: #ffffff;
+    --text-muted: #b0b0b0;
+
+    /* Radii + padding */
+    --radius: 14px;
+    --radius-lg: 20px;
+
+    --padding: 16px;
+    --padding-lg: 28px;
+
+    /* Layout width */
+    --max-width: 1200px;
+
+    /* Transition */
+    --transition-fast: 0.2s ease;
+    --transition-medium: 0.4s ease;
+}
+
+/* --------------------------------------------
+   GLOBAL BACKGROUND EFFECT
+   -------------------------------------------- */
+
+body::before {
+    content: "";
+    position: fixed;
+    top: -50px;
+    right: -50px;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, var(--neon-purple), transparent 70%);
+    filter: blur(80px);
+    opacity: 0.35;
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    bottom: -50px;
+    left: -50px;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, var(--neon-blue), transparent 70%);
+    filter: blur(90px);
+    opacity: 0.35;
+    z-index: -1;
+}
+
+/* --------------------------------------------
+   SCROLLBAR STYLE — DARK + NEON
+   -------------------------------------------- */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0f1f;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--neon-blue);
+    border-radius: 5px;
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--neon-cyan);
+}
+
+/* --------------------------------------------
+   TYPOGRAPHY UTILS
+   -------------------------------------------- */
+
+h1, h2, h3, h4 {
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+p {
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* --------------------------------------------
+   PAGE CONTAINERS
+   -------------------------------------------- */
+
+.container {
+    width: min(90%, var(--max-width));
+    margin: auto;
+    padding-top: 40px;
+}
+
+/* --------------------------------------------
+   GLASSMORPHISM WRAPPER
+   -------------------------------------------- */
+
+.glass {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    padding: var(--padding-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.05);
+}
+
+/* --------------------------------------------
+   UTILITY CLASSES
+   -------------------------------------------- */
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+    gap: 20px;
+}
+
+.mt-1 { margin-top: 10px; }
+.mt-2 { margin-top: 20px; }
+.mt-3 { margin-top: 30px; }
+
+.text-center { text-align: center; }
+.text-light { color: var(--text-light); }
+.text-muted { color: var(--text-muted); }
+
+/* --------------------------------------------
+   LINK RESET + HOVER EFFECT
+   -------------------------------------------- */
+
+a {
+    color: var(--neon-cyan);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+a:hover {
+    color: var(--neon-pink);
+}
+
+/* --------------------------------------------
+   BUTTON RESET (base — full styles in components.css)
+   -------------------------------------------- */
+
+button {
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+}
+
+/* --------------------------------------------
+   IMAGE UTILS
+   -------------------------------------------- */
+
+img {
+    max-width: 100%;
+    display: block;
+    border-radius: var(--radius);
+}

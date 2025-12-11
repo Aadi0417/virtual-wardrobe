@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> StyleMate Home</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/neon.css">
+    <link rel="stylesheet" href="css/pages/home.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo neon">StyleMate</div>
+
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div><div></div><div></div>
+            </div>
+
+            <div class="nav-links" id="navMenu">
+                <a href="index.html">Home</a>
+                <a href="add.html">Add Clothes</a>
+                <a href="wardrobe.html">Wardrobe</a>
+                <a href="planner.html">Outfit Planner</a>
+                <a href="saved.html">Saved Outfits</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero container">
+        <h1 class="neon">sobe</h1>
+        <p>Organize your clothing, plan amazing outfits, and manage everything.</p>
+
+        <div class="hero-btns mt-3">
+            <a href="add.html"><button class="btn btn-primary neon-pulse">Add Clothing</button></a>
+            <a href="planner.html"><button class="btn glow-hover">Plan Outfit</button></a>
+        </div>
+    </section>
+
+    <!-- ================= FEATURES ================= -->
+    <section class="container mt-3">
+        <h2 class="text-center neon-purple">Features</h2>
+
+        <div class="grid-3 mt-3">
+
+            <div class="card glow-hover">
+                <h3 class="neon-blue">Drag & Drop Upload</h3>
+                <p>Easily upload your clothing images using drag & drop or file picker.</p>
+            </div>
+
+            <div class="card glow-hover">
+                <h3 class="neon-blue">Smart Filters</h3>
+                <p>Filter your wardrobe by category, color, season, and occasion.</p>
+            </div>
+
+            <div class="card glow-hover">
+                <h3 class="neon-blue">Outfit Planner</h3>
+                <p>Create and save stylish outfits using your uploaded wardrobe items.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        StyleMate © 2025
+    </footer>
+
+    <!-- ================= JS FOR MENU ================= -->
+    <script>
+        function toggleMenu() {
+            document.getElementById("navMenu").classList.toggle("active");
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Saved Outfits | StyleMate </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/neon.css">
+  <link rel="stylesheet" href="css/pages/saved.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-container">
+      <div class="nav-logo neon">StyleMate</div>
+
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div><div></div><div></div>
+      </div>
+
+      <div class="nav-links" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="add.html">Add Clothes</a>
+        <a href="wardrobe.html">Wardrobe</a>
+        <a href="planner.html">Outfit Planner</a>
+        <a href="saved.html" class="active">Saved Outfits</a>
+      </div>
+    </div>
+  </nav>
+
+  <h1 class="page-title">Saved Outfits</h1>
+
+  <div class="container">
+    <div class="section">
+      <div class="glass" style="padding:14px; display:flex; gap:12px; align-items:center; justify-content:space-between;">
+        <div style="display:flex; gap:10px; align-items:center;">
+          <button class="btn btn-primary" onclick="exportAllOutfits()">Export All (JSON)</button>
+          <label class="btn" style="cursor:pointer;">
+            Import JSON
+            <input type="file" id="importFile" accept="application/json" style="display:none;" onchange="handleImport(event)">
+          </label>
+        </div>
+
+        <div style="display:flex; gap:10px; align-items:center;">
+          <input id="searchSaved" placeholder="Search saved outfits..." oninput="renderSavedOutfits()" style="max-width:320px;">
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div id="savedGrid" class="grid-3"></div>
+      <p id="savedEmpty" class="text-center text-muted" style="display:none;">No saved outfits yet.</p>
+    </section>
+  </div>
+
+  <!-- Modal for viewing outfit details -->
+  <div id="modal" class="modal-bg">
+    <div class="modal glass">
+      <div id="modalContent"></div>
+      <div style="margin-top:12px; display:flex; gap:10px; justify-content:flex-end;">
+        <button class="btn" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast">Done</div>
+
+  <footer>
+    StyleMate © 2025
+  </footer>
+
+  <!-- JS -->
+  <script src="js/utils.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/export.js"></script>
+  <script src="js/saved.js"></script>
+
+  <script>
+    function toggleMenu(){ document.getElementById("navMenu").classList.toggle("active"); }
+  </script>
+</body>
+</html>

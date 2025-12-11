@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Clothing | StyleMate</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/neon.css">
+    <link rel="stylesheet" href="css/pages/add.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo neon">StyleMate</div>
+
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div><div></div><div></div>
+            </div>
+
+            <div class="nav-links" id="navMenu">
+                <a href="index.html">Home</a>
+                <a href="add.html" class="active">Add Clothes</a>
+                <a href="wardrobe.html">Wardrobe</a>
+                <a href="planner.html">Outfit Planner</a>
+                <a href="saved.html">Saved Outfits</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= PAGE TITLE ================= -->
+    <h1 class="page-title">Add Clothing Item</h1>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <div class="container">
+
+        <div class="grid-2">
+
+            <!-- LEFT SIDE: UPLOAD AREA -->
+            <div class="glass upload-area" 
+                id="dropzone"
+                ondragover="event.preventDefault()"
+                ondrop="handleDrop(event)">
+                
+                <h2 class="neon-purple text-center">Upload Image</h2>
+                <p class="text-center text-muted mt-1">Drag & Drop or Click Below</p>
+
+                <input type="file" id="fileInput" accept="image/*" onchange="handleFileUpload(event)">
+                <button class="btn btn-primary mt-2 neon-pulse" onclick="document.getElementById('fileInput').click()">
+                    Choose Image
+                </button>
+
+                <div id="previewContainer" class="preview mt-2">
+                    <img id="previewImg" src="" alt="" style="display:none;">
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE: FORM -->
+            <div class="glass form-area">
+                <h2 class="neon">Details</h2>
+
+                <label class="mt-2">Category</label>
+                <select id="category">
+                    <option value="">Select</option>
+                    <option>Top</option>
+                    <option>Bottom</option>
+                    <option>Shoes</option>
+                    <option>Accessory</option>
+                    <option>Outerwear</option>
+                </select>
+
+                <label class="mt-2">Color</label>
+                <input id="color" placeholder="Color">
+
+                <label class="mt-2">Season</label>
+                <select id="season">
+                    <option value="">Select</option>
+                    <option>Summer</option>
+                    <option>Winter</option>
+                    <option>Spring</option>
+                    <option>Autumn</option>
+                </select>
+
+                <label class="mt-2">Occasion</label>
+                <select id="occasion">
+                    <option value="">Select</option>
+                    <option>Casual</option>
+                    <option>Formal</option>
+                    <option>Party</option>
+                    <option>Sports</option>
+                    <option>Work</option>
+                </select>
+
+                <label class="mt-2">Tags (comma separated)</label>
+                <input id="tags" placeholder="e.g., comfy, black, oversized">
+
+                <button class="btn btn-primary mt-3" onclick="saveClothing()">Save Item</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= TOAST ================= -->
+    <div id="toast" class="toast">Clothing saved!</div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        StyleMate © 2025
+    </footer>
+
+    <!-- ================= JS ================= -->
+    <script src="js/utils.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/add.js"></script>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("navMenu").classList.toggle("active");
+        }
+    </script>
+
+</body>
+</html>
